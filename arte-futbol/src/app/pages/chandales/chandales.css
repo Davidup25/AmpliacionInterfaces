@@ -1,0 +1,120 @@
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0077cc 0%, #003d73 100%);
+  color: white;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* ===== WRAPPER ===== */
+.suits-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.suits-title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0077cc;
+}
+
+.suits-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Grid */
+.suits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.suits-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.suits-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* Image */
+.equip-img-placeholder img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.suits-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Info */
+.suits-info {
+  padding: 20px;
+}
+
+.suits-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #003d73;
+}
+
+.suits-info p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.suits-info button {
+  background: #0077cc;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.suits-info button:hover {
+  background: #005fa3;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .equip-img-placeholder img { height: 210px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 50px 15px; }
+  .hero h1 { font-size: 2rem; }
+  .suits-info h3 { font-size: 1.15rem; }
+  .equip-img-placeholder img { height: 190px; }
+}

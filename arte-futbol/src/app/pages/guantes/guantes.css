@@ -1,0 +1,116 @@
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #7a00cc, #420062);
+  color: white;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+/* ===== WRAPPER ===== */
+.gloves-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.gloves-title {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #7a00cc;
+  margin-bottom: 15px;
+}
+
+.gloves-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+/* Grid */
+.gloves-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.gloves-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.gloves-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* Image */
+.equip-img-placeholder img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gloves-card:hover img {
+  transform: scale(1.07);
+}
+
+/* Info */
+.gloves-info {
+  padding: 20px;
+}
+
+.gloves-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #420062;
+}
+
+.gloves-info p {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.gloves-info button {
+  background: #7a00cc;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.gloves-info button:hover {
+  background: #5b0099;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .equip-img-placeholder img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 20px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .equip-img-placeholder img {
+    height: 170px;
+  }
+}

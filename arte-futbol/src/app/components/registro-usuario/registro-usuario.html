@@ -1,0 +1,48 @@
+<!-- Formulario de Registro -->
+<div class="login-container">
+  <div class="login-card">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="login">Registrarse</button>
+    </div>
+    <form class="login-form active" id="registerForm">
+      <h3>Crear nueva cuenta</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="regNombre">Nombre</label>
+          <input type="text" id="regNombre" placeholder="Tu nombre"
+            class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="regApellido">Apellido</label>
+          <input type="text" id="regApellido" placeholder="Tu apellido"
+            class="form-input">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="tu@email.com"
+          class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="regUsuario">Usuario</label>
+        <input type="text" id="regUsuario"
+          placeholder="Elige un nombre de usuario" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="regClave">Contraseña</label>
+        <input type="password" id="regClave"
+          placeholder="Crea una contraseña segura" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="regConfirmarClave">Confirmar Contraseña</label>
+        <input type="password" id="regConfirmarClave"
+          placeholder="Repite tu contraseña" class="form-input">
+      </div>
+      <label class="checkbox-label">
+        <input type="checkbox"> Acepto los términos y condiciones
+      </label>
+      <button type="submit" class="btn btn-primary btn-full">Crear
+        Cuenta</button>
+    </form>
+  </div>
+</div>
