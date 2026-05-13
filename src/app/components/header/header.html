@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/home" routerLinkActive="active">⚽ FutbolArte</a>
+  </div>
+
+  <ul class="menu">
+    <li class="dropdown">
+      <button class="dropbtn">Categorías ▾</button>
+      <div class="dropdown-content">
+        <a routerLink="/equipaciones" routerLinkActive="active">Equipaciones</a>
+        <a routerLink="/chandales" routerLinkActive="active">Chándales</a>
+        <a routerLink="/botas" routerLinkActive="active">Botas</a>
+        <a routerLink="/guantes" routerLinkActive="active">Guantes</a>
+      </div>
+    </li>
+
+    <li class="dropdownUser">
+      <button class="dropbtnUser"></button>
+      <img src="arte-futbol/src/app/assets/acceso.png" alt="Cuenta ▾"
+        class="icon-user">
+      <div class="dropdownUser-content">
+        <a routerLink="/seccion-usuario" routerLinkActive="active">Iniciar
+          sesión</a>
+        <a routerLink="/registro-usuario"
+          routerLinkActive="active">Registrarse</a>
+      </div>
+    </li>
+  </ul>
+</nav>
