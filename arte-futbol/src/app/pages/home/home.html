@@ -1,77 +1,90 @@
-<div class="hero">
-  <h1>FutbolArte</h1>
-  <p>Tu espacio de confianza para equipamiento de fútbol. Calidad, estilo y rendimiento en cada compra.</p>
-</div>
+<main>
+  <section class="hero" aria-labelledby="home-title">
+    <h1 id="home-title">FutbolArte</h1>
+    <p>Tu espacio de confianza para equipamiento de fútbol. Calidad, estilo y rendimiento en cada compra.</p>
+  </section>
 
-<section class="categories">
-  <h2>Nuestras categorías</h2>
+  <section class="categories" aria-labelledby="cat-title">
+    <h2 id="cat-title">Nuestras categorías</h2>
 
-  <div class="category-grid">
-
-    <a class="flip-card" routerLink="/equipaciones">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h3>Equipaciones</h3>
-
+    <div class="category-grid">
+      <a class="flip-card" routerLink="/equipaciones" aria-label="Ver categoría de Equipaciones: Camisetas y conjuntos oficiales">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Equipaciones</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Camisetas y conjuntos oficiales para jugadores y aficionados.</p>
+          </div>
         </div>
-        <div class="flip-card-back">
-          <p>Camisetas y conjuntos oficiales para jugadores y aficionados.</p>
-        </div>
-      </div>
-    </a>
+      </a>
 
-    <a class="flip-card" routerLink="/chandales">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h3>Chándals</h3>
+      <a class="flip-card" routerLink="/chandales" aria-label="Ver categoría de Chándals: Conjuntos cómodos para entrenar">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Chándals</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Conjuntos cómodos para entrenar o vestir a diario.</p>
+          </div>
         </div>
-        <div class="flip-card-back">
-          <p>Conjuntos cómodos para entrenar o vestir a diario.</p>
-        </div>
-      </div>
-    </a>
+      </a>
 
-    <a class="flip-card" routerLink="/botas">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h3>Botas</h3>
+      <a class="flip-card" routerLink="/botas" aria-label="Ver categoría de Botas: Modelos para todo tipo de superficies">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Botas</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Modelos para césped natural, artificial y multitaco.</p>
+          </div>
         </div>
-        <div class="flip-card-back">
-          <p>Modelos para césped natural, artificial y multitaco.</p>
-        </div>
-      </div>
-    </a>
+      </a>
 
-    <a class="flip-card" routerLink="/guantes">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h3>Guantes</h3>
+      <a class="flip-card" routerLink="/guantes" aria-label="Ver categoría de Guantes: Protección profesional para porteros">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Guantes</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Guantes con agarre y protección profesional para porteros.</p>
+          </div>
         </div>
-        <div class="flip-card-back">
-          <p>Guantes con agarre y protección profesional para porteros.</p>
-        </div>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<section class="features">
-  <h2>Motivos para elegirnos</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <h3>✔ Envíos 24/48h</h3>
-      <p>Procesamos y enviamos tus pedidos rápidamente.</p>
+      </a>
     </div>
-    <div class="feature-card">
-      <h3>✔ Productos verificados</h3>
-      <p>Trabajamos únicamente con proveedores oficiales.</p>
-    </div>
-    <div class="feature-card">
-      <h3>✔ Pagos seguros</h3>
-      <p>Protección avanzada para tus datos y transacciones.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <section class="features" aria-labelledby="features-title">
+    <h2 id="features-title">Motivos para elegirnos</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3><span aria-hidden="true">✔</span> Envíos 24/48h</h3>
+        <p>Procesamos y enviamos tus pedidos rápidamente.</p>
+      </div>
+      <div class="feature-card">
+        <h3><span aria-hidden="true">✔</span> Productos verificados</h3>
+        <p>Trabajamos únicamente con proveedores oficiales.</p>
+      </div>
+      <div class="feature-card">
+        <h3><span aria-hidden="true">✔</span> Pagos seguros</h3>
+        <p>Protección avanzada para tus datos y transacciones.</p>
+      </div>
+    </div>
+  </section>
 
+  <section class="media-section" style="text-align: center; padding: 2rem; background-color: #f9f9f9;">
+    <h2>Descubre nuestra pasión</h2>
+    <figure>
+      <video controls width="100%" style="max-width: 700px; border-radius: 8px;" aria-label="Vídeo sobre equipamiento de fútbol profesional">
+        <source src="assets/video/promo.mp4" type="video/mp4">
+        <track kind="subtitles" src="assets/video/subtitulos-es.vtt" srclang="es" label="Español" default>
+        Tu navegador no soporta el vídeo.
+      </video>
+      <figcaption style="margin-top: 1rem;">
+        <p>Vídeo promocional de temporada. 
+          <a href="assets/video/transcripcion.txt" target="_blank" aria-label="Leer transcripción del vídeo promocional">Ver transcripción completa (Texto)</a>
+        </p>
+      </figcaption>
+    </figure>
+  </section>
+</main>

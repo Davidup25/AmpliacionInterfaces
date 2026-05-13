@@ -1,48 +1,48 @@
-<!-- Formulario de Registro -->
 <div class="login-container">
   <div class="login-card">
     <div class="tabs">
-      <button class="tab-button active" data-tab="login">Registrarse</button>
+      <button class="tab-button active" data-tab="login" aria-pressed="true">Registrarse</button>
     </div>
-    <form class="login-form active" id="registerForm">
-      <h3>Crear nueva cuenta</h3>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="regNombre">Nombre</label>
-          <input type="text" id="regNombre" placeholder="Tu nombre"
-            class="form-input">
+    <form class="login-form active" id="registerForm" aria-labelledby="form-title">
+      <h3 id="form-title">Crear nueva cuenta</h3>
+      
+      <fieldset>
+        <legend class="sr-only" style="display:none;">Datos Personales</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regNombre">Nombre <span aria-hidden="true">*</span></label>
+            <input type="text" id="regNombre" placeholder="Tu nombre" class="form-input" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="regApellido">Apellido <span aria-hidden="true">*</span></label>
+            <input type="text" id="regApellido" placeholder="Tu apellido" class="form-input" required aria-required="true">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="regApellido">Apellido</label>
-          <input type="text" id="regApellido" placeholder="Tu apellido"
-            class="form-input">
-        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <label for="regEmail">Email <span aria-hidden="true">*</span></label>
+        <input type="email" id="regEmail" placeholder="tu@email.com" class="form-input" required aria-required="true">
       </div>
       <div class="form-group">
-        <label for="regEmail">Email</label>
-        <input type="email" id="regEmail" placeholder="tu@email.com"
-          class="form-input">
+        <label for="regUsuario">Usuario <span aria-hidden="true">*</span></label>
+        <input type="text" id="regUsuario" placeholder="Elige un nombre de usuario" class="form-input" required aria-required="true">
       </div>
       <div class="form-group">
-        <label for="regUsuario">Usuario</label>
-        <input type="text" id="regUsuario"
-          placeholder="Elige un nombre de usuario" class="form-input">
+        <label for="regClave">Contraseña <span aria-hidden="true">*</span></label>
+        <input type="password" id="regClave" placeholder="Crea una contraseña segura" class="form-input" required aria-required="true">
       </div>
       <div class="form-group">
-        <label for="regClave">Contraseña</label>
-        <input type="password" id="regClave"
-          placeholder="Crea una contraseña segura" class="form-input">
+        <label for="regConfirmarClave">Confirmar Contraseña <span aria-hidden="true">*</span></label>
+        <input type="password" id="regConfirmarClave" placeholder="Repite tu contraseña" class="form-input" required aria-required="true">
       </div>
-      <div class="form-group">
-        <label for="regConfirmarClave">Confirmar Contraseña</label>
-        <input type="password" id="regConfirmarClave"
-          placeholder="Repite tu contraseña" class="form-input">
+      
+      <div class="form-group-checkbox">
+        <input type="checkbox" id="regTerminos" required aria-required="true">
+        <label for="regTerminos" class="checkbox-label">Acepto los términos y condiciones</label>
       </div>
-      <label class="checkbox-label">
-        <input type="checkbox"> Acepto los términos y condiciones
-      </label>
-      <button type="submit" class="btn btn-primary btn-full">Crear
-        Cuenta</button>
+      
+      <button type="submit" class="btn btn-primary btn-full">Crear Cuenta</button>
     </form>
   </div>
 </div>

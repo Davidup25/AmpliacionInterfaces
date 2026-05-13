@@ -1,47 +1,72 @@
-<div class="hero">
-  <h1>Chándales Deportivos</h1>
+<nav aria-label="Migas de pan" class="breadcrumbs" style="padding: 1rem 2rem; background-color: #f4f4f4; margin-bottom: 1rem;">
+  <ol style="list-style: none; display: flex; gap: 0.5rem; margin: 0; padding: 0; font-size: 0.9rem;">
+    <li><a routerLink="/home" style="color: #0077cc; text-decoration: none;">Inicio</a></li>
+    <li aria-hidden="true">/</li>
+    <li><a routerLink="/chandales" aria-current="page" style="color: #333; font-weight: bold; text-decoration: none;">Chándales</a></li>
+  </ol>
+</nav>
+
+<section class="hero" aria-labelledby="chandales-hero-title">
+  <h1 id="chandales-hero-title">Chándales Deportivos</h1>
   <p>Comodidad, estilo y rendimiento en cada prenda.</p>
-</div>
+</section>
 
-<div class="suits-wrapper">
-
-  <h2 class="suits-title">Chándales Disponibles</h2>
+<section class="suits-wrapper" aria-labelledby="suits-title">
+  <h2 class="suits-title" id="suits-title">Chándales Disponibles</h2>
   <p class="suits-subtitle">Ropa deportiva diseñada para entrenar y vestir con estilo.</p>
 
-  <div class="suits-grid">
+  <div class="search-filter-container" aria-label="Filtros de chándales" style="margin-bottom: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+    <div class="filter-group">
+      <label for="searchChandales"><strong>Buscar:</strong></label>
+      <input type="search" id="searchChandales" placeholder="Ej: Paseo, Entrenamiento..." aria-label="Buscar chándales por tipo" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-left: 0.5rem;">
+    </div>
+    <div class="filter-group">
+      <label for="filterMarca"><strong>Marca:</strong></label>
+      <select id="filterMarca" aria-label="Filtrar por marca" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-left: 0.5rem;">
+        <option value="todas">Todas las marcas</option>
+        <option value="nike">Nike</option>
+        <option value="adidas">Adidas</option>
+      </select>
+    </div>
+  </div>
 
-    <div class="suits-card">
+  <div class="suits-grid" role="list">
+
+    <article class="suits-card" role="listitem">
       <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/269520/750/chandal-nike-fc-barcelona-training-2025-2026-crimson-tint-midnight-navy-bright-mango-midni-0.webp" alt="Chándal Entrenamiento">
+        <img src="https://www.futbolemotion.com/imagesarticulos/269520/750/chandal-nike-fc-barcelona-training-2025-2026-crimson-tint-midnight-navy-bright-mango-midni-0.webp" 
+             alt="Chándal de entrenamiento Nike FC Barcelona color azul marino y mango">
       </div>
       <div class="suits-info">
-        <h3>Chandal Kit Entrenamiento</h3>
+        <h3>Chándal Kit Entrenamiento</h3>
         <p>Confeccionado en tejido transpirable para entrenamientos intensos.</p>
-        <button>Ver producto</button>
+        <button aria-label="Ver detalles del Chándal Kit de Entrenamiento del FC Barcelona">Ver producto</button>
       </div>
-    </div>
+    </article>
 
-    <div class="suits-card">
-        <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/264893/750/chandal-adidas-real-madrid-training-2025-2026-almost-lime-utility-grey-0.webp" alt="Chándal Paseo">
+    <article class="suits-card" role="listitem">
+      <div class="equip-img-placeholder">
+        <img src="https://www.futbolemotion.com/imagesarticulos/264893/750/chandal-adidas-real-madrid-training-2025-2026-almost-lime-utility-grey-0.webp" 
+             alt="Chándal de paseo Adidas Real Madrid color gris y lima">
       </div>
       <div class="suits-info">
-        <h3>Candal Kit Paseo</h3>
+        <h3>Chándal Kit Paseo</h3>
         <p>Diseño ligero ideal para uso diario o pre-partido.</p>
-        <button>Ver producto</button>
+        <button aria-label="Ver detalles del Chándal Kit de Paseo del Real Madrid">Ver producto</button>
       </div>
-    </div>
+    </article>
 
-    <div class="suits-card">
-       <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/267787/750/sudadera-adidas-real-zaragoza-entreno-jugador-25-26-azul-marino-0.webp" alt="Sudadera Chándal">
+    <article class="suits-card" role="listitem">
+      <div class="equip-img-placeholder">
+        <img src="https://www.futbolemotion.com/imagesarticulos/267787/750/sudadera-adidas-real-zaragoza-entreno-jugador-25-26-azul-marino-0.webp" 
+             alt="Sudadera de chándal Adidas Real Zaragoza color azul marino">
       </div>
       <div class="suits-info">
-        <h3>Sudaderas de chandal</h3>
-        <p>Partes de arriba de chandales</p>
-        <button>Ver producto</button>
+        <h3>Sudaderas de chándal</h3>
+        <p>Partes de arriba de chándales</p>
+        <button aria-label="Ver detalles de Sudaderas de chándal">Ver producto</button>
       </div>
-    </div>
+    </article>
 
   </div>
-</div>
+</section>

@@ -1,28 +1,26 @@
-<nav class="navbar">
+<nav class="navbar" aria-label="Navegación principal">
   <div class="logo">
-    <a routerLink="/home" routerLinkActive="active">⚽ FutbolArte</a>
+    <a routerLink="/home" routerLinkActive="active" aria-label="Ir a la página de inicio" title="Ir a la página principal de FutbolArte">⚽ FutbolArte</a>
   </div>
 
   <ul class="menu">
     <li class="dropdown">
-      <button class="dropbtn">Categorías ▾</button>
-      <div class="dropdown-content">
-        <a routerLink="/equipaciones" routerLinkActive="active">Equipaciones</a>
-        <a routerLink="/chandales" routerLinkActive="active">Chándales</a>
-        <a routerLink="/botas" routerLinkActive="active">Botas</a>
-        <a routerLink="/guantes" routerLinkActive="active">Guantes</a>
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false" title="Desplegar menú de categorías">Categorías ▾</button>
+      <div class="dropdown-content" aria-label="Submenú de categorías">
+        <a routerLink="/equipaciones" routerLinkActive="active" title="Ver catálogo de equipaciones">Equipaciones</a>
+        <a routerLink="/chandales" routerLinkActive="active" title="Ver catálogo de chándales">Chándales</a>
+        <a routerLink="/botas" routerLinkActive="active" title="Ver catálogo de botas">Botas</a>
+        <a routerLink="/guantes" routerLinkActive="active" title="Ver catálogo de guantes">Guantes</a>
       </div>
     </li>
 
     <li class="dropdownUser">
-      <button class="dropbtnUser"></button>
-      <img src="arte-futbol/src/app/assets/acceso.png" alt="Cuenta ▾"
-        class="icon-user">
-      <div class="dropdownUser-content">
-        <a routerLink="/seccion-usuario" routerLinkActive="active">Iniciar
-          sesión</a>
-        <a routerLink="/registro-usuario"
-          routerLinkActive="active">Registrarse</a>
+      <button class="dropbtnUser" aria-haspopup="true" aria-expanded="false" aria-label="Menú de usuario" title="Desplegar opciones de usuario">
+        <img src="arte-futbol/src/app/assets/acceso.png" alt="" aria-hidden="true" class="icon-user">
+      </button>
+      <div class="dropdownUser-content" aria-label="Submenú de cuenta">
+        <a routerLink="/seccion-usuario" routerLinkActive="active" title="Ir a la página de inicio de sesión">Iniciar sesión</a>
+        <a routerLink="/registro-usuario" routerLinkActive="active" title="Ir a la página de registro">Registrarse</a>
       </div>
     </li>
   </ul>

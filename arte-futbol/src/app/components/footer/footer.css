@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,40 0;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
   font-family: 'Lato', sans-serif;
@@ -15,10 +15,7 @@ body {
 }
 
 .main-content {
-  /* Equivale a: flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
   flex: 1;
-  /*Para que margin-top: auto del footer lo deje siempre abajo*/
-  /*1rem equivale normalmente a 16px, tamaño fuente elemento raíz*/
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -56,7 +53,6 @@ body {
   color: #f0f0f0;
   padding: 2rem 1rem;
   margin-top: auto;
-  /* Esto asegura que el footer se mantenga abajo */
 }
 
 .footer-container {
@@ -68,10 +64,8 @@ body {
   gap: 2rem;
 }
 
-/* 3.2 - Tamaño base de 200px con flexibilidad */
 .footer-section {
   flex: 1 1 200px;
-  /* flex-grow: 1, flex-shrink: 1, flex-basis: 200px */
   min-width: 200px;
 }
 
@@ -90,13 +84,18 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* AÑADIDO: min-height 44px para cumplir objetivo táctil (Accesibilidad 1) */
 .footer-section a {
   color: #ddd;
   text-decoration: none;
   transition: all 0.3s ease;
+  display: inline-block;
+  min-height: 44px;
+  line-height: 44px; /* Asegura que el texto esté centrado verticalmente */
 }
 
-.footer-section a:hover {
+.footer-section a:hover,
+.footer-section a:focus-visible {
   color: #fff;
   text-decoration: underline;
 }
@@ -132,21 +131,20 @@ body {
 
 .subscription-form button {
   padding: 0.5rem 1rem;
-  background-color: #777;
+  background-color: #333; 
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  /*Como cambiar el color de fondo del botón*/
   transition: background-color 0.3s ease;
+  min-height: 44px; /* AÑADIDO: min-height 44px para botón del form */
 }
 
-/*Cmabio del color de fondo del botón*/
-.subscription-form button:hover {
-  background-color: #888;
+.subscription-form button:hover,
+.subscription-form button:focus-visible {
+  background-color: #111;
 }
 
-/* 3.1 - Diseño responsivo para dispositivos móviles */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -158,11 +156,13 @@ body {
   }
 }
 
-.main-content {
-  flex: 1; /* Ocupa el espacio disponible y empuja el footer abajo */
-}
-
-/* Tu footer ya tiene margin-top: auto, eso ayuda */
-.footer {
-  margin-top: auto;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

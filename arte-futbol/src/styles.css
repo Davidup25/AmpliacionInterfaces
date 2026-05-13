@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================================================
+   ACCESIBILIDAD Y USABILIDAD GLOBAL 
+   ========================================================= */
+
+/* 1. Tamaños relativos - Permite zoom del navegador */
+html {
+  font-size: 100%; 
+}
+
+body {
+  line-height: 1.6; /* Mejora la legibilidad  */
+  color: #222; /* Asegura un contraste alto con fondos claros */
+}
+
+/* 2. Navegación por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 4px solid #0056b3 !important; /* Borde azul grueso al usar Tab */
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* 3. Indicadores visuales para formularios  */
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border: 2px solid #d9534f !important; /* Rojo para error */
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border: 2px solid #28a745 !important; /* Verde para correcto */
+}
+
+/* Ocultar elementos visualmente pero dejarlos para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

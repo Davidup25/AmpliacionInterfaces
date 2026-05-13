@@ -108,3 +108,45 @@
 .equip-info button:hover {
   background: #005fa3;
 }
+/* 
+   TABLA 
+ */
+.size-guide {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.usability-table {
+  border-collapse: collapse; /* Evita doble borde */
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.usability-table th, 
+.usability-table td {
+  padding: 12px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Línea divisoria */
+}
+
+.usability-table th {
+  background-color: #111;
+  color: white;
+}
+
+/* Efecto Zebra Striping */
+.usability-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.usability-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Resaltar fila al pasar el ratón */
+.usability-table tbody tr:hover {
+  background-color: #e6e6e6;
+  cursor: default;
+}
