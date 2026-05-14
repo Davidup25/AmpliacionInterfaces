@@ -4,6 +4,22 @@
   </div>
 
   <ul class="menu">
+    <li class="search-item">
+      <div class="header-search" role="search">
+        <label for="headerSearch" class="sr-only">Buscar productos</label>
+        <input
+          type="search"
+          id="headerSearch"
+          class="header-search-input"
+          placeholder="Buscar..."
+          aria-label="Buscar productos en FutbolArte"
+          #headerSearchInput
+          (keydown.enter)="buscarDesdeHeader(headerSearchInput.value)"
+        >
+        <button class="header-search-btn" aria-label="Realizar búsqueda" (click)="buscarDesdeHeader(headerSearchInput.value)" title="Buscar">🔍</button>
+      </div>
+    </li>
+
     <li class="dropdown">
       <button class="dropbtn" aria-haspopup="true" aria-expanded="false" title="Desplegar menú de categorías">Categorías ▾</button>
       <div class="dropdown-content" aria-label="Submenú de categorías">
@@ -14,9 +30,35 @@
       </div>
     </li>
 
+    <li class="cart-item">
+      <button class="cart-btn" aria-label="Ver carrito de compra" title="Abrir carrito" (click)="toggleCarrito()">
+        🛒 <span class="cart-count" *ngIf="carritoCount > 0">{{ carritoCount }}</span>
+      </button>
+      <div class="carrito-panel" [class.carrito-visible]="carritoAbierto" role="dialog" aria-label="Carrito de compra">
+        <div class="carrito-header">
+          <h3>🛒 Carrito</h3>
+          <button class="cerrar-carrito" (click)="toggleCarrito()" aria-label="Cerrar carrito">✕</button>
+        </div>
+        <div class="carrito-body">
+          <p *ngIf="carritoItems.length === 0" class="carrito-vacio">Tu carrito está vacío.</p>
+          <ul *ngIf="carritoItems.length > 0" class="carrito-lista">
+            <li *ngFor="let item of carritoItems; let i = index" class="carrito-linea">
+              <span class="item-nombre">{{ item.nombre }}</span>
+              <span class="item-precio">{{ item.precio }} €</span>
+              <button class="item-eliminar" (click)="eliminarDelCarrito(i)" aria-label="Eliminar del carrito">✕</button>
+            </li>
+          </ul>
+          <div *ngIf="carritoItems.length > 0" class="carrito-total">
+            <strong>Total: {{ carritoTotal() }} €</strong>
+          </div>
+          <button *ngIf="carritoItems.length > 0" class="btn-comprar" aria-label="Proceder al pago">Comprar ahora</button>
+        </div>
+      </div>
+    </li>
+
     <li class="dropdownUser">
       <button class="dropbtnUser" aria-haspopup="true" aria-expanded="false" aria-label="Menú de usuario" title="Desplegar opciones de usuario">
-        <img src="arte-futbol/src/app/assets/acceso.png" alt="" aria-hidden="true" class="icon-user">
+        👤 Cuenta ▾
       </button>
       <div class="dropdownUser-content" aria-label="Submenú de cuenta">
         <a routerLink="/seccion-usuario" routerLinkActive="active" title="Ir a la página de inicio de sesión">Iniciar sesión</a>

@@ -33,6 +33,7 @@
   </div>
 
   <div class="equip-grid" role="list">
+
     <article class="equip-card" role="listitem">
       <div class="equip-img-placeholder">
         <img src="https://www.futbolemotion.com/imagesarticulos/269504/grandes/camiseta-nike-fc-barcelona-primera-equipacion-2025-2026-deep-royal-blue-0.webp"
@@ -41,7 +42,9 @@
       <div class="equip-info">
         <h3>Equipación Local</h3>
         <p>Conjunto oficial de la temporada. Tejido transpirable y diseño profesional.</p>
+        <p class="equip-precio">💲 89.99 €</p>
         <button aria-label="Ver detalles de la Equipación Local del Barcelona">Ver detalles</button>
+        <button class="btn-add-cart" (click)="agregarAlCarrito('Equipación Local Barcelona', 89.99)" aria-label="Añadir al carrito">🛒 Añadir al carrito</button>
       </div>
     </article>
 
@@ -53,7 +56,9 @@
       <div class="equip-info">
         <h3>Equipación Visitante</h3>
         <p>Segunda equipación con materiales ligeros y de secado rápido.</p>
+        <p class="equip-precio">💲 89.99 €</p>
         <button aria-label="Ver detalles de la Equipación Visitante del Barcelona">Ver detalles</button>
+        <button class="btn-add-cart" (click)="agregarAlCarrito('Equipación Visitante Barcelona', 89.99)" aria-label="Añadir al carrito">🛒 Añadir al carrito</button>
       </div>
     </article>
 
@@ -65,7 +70,9 @@
       <div class="equip-info">
         <h3>Tercera Equipación</h3>
         <p>Edición especial con colores alternativos y diseño exclusivo.</p>
+        <p class="equip-precio">💲 84.99 €</p>
         <button aria-label="Ver detalles de la Tercera Equipación del Barcelona">Ver detalles</button>
+        <button class="btn-add-cart" (click)="agregarAlCarrito('Tercera Equipación Barcelona', 84.99)" aria-label="Añadir al carrito">🛒 Añadir al carrito</button>
       </div>
     </article>
 
@@ -77,7 +84,9 @@
       <div class="equip-info">
         <h3>Equipaciones Retro</h3>
         <p>Modelos clásicos inspirados en temporadas históricas. Coleccionables.</p>
+        <p class="equip-precio">💲 69.99 €</p>
         <button aria-label="Ver detalles de Equipaciones Retro">Ver detalles</button>
+        <button class="btn-add-cart" (click)="agregarAlCarrito('Equipación Retro Atlético', 69.99)" aria-label="Añadir al carrito">🛒 Añadir al carrito</button>
       </div>
     </article>
 
@@ -89,7 +98,9 @@
       <div class="equip-info">
         <h3>Equipaciones de Selecciones</h3>
         <p>Representa a tu país con equipaciones oficiales y réplicas premium.</p>
+        <p class="equip-precio">💲 94.99 €</p>
         <button aria-label="Ver detalles de Equipaciones de Selecciones nacionales">Ver detalles</button>
+        <button class="btn-add-cart" (click)="agregarAlCarrito('Equipación Selección Brasil', 94.99)" aria-label="Añadir al carrito">🛒 Añadir al carrito</button>
       </div>
     </article>
 
@@ -101,10 +112,14 @@
       <div class="equip-info">
         <h3>Equipaciones para Entrenamiento</h3>
         <p>Ropa técnica diseñada para mejorar tu rendimiento en los entrenamientos.</p>
+        <p class="equip-precio">💲 59.99 €</p>
         <button aria-label="Ver detalles de Equipaciones para Entrenamiento">Ver detalles</button>
+        <button class="btn-add-cart" (click)="agregarAlCarrito('Equipación Entrenamiento Real Madrid', 59.99)" aria-label="Añadir al carrito">🛒 Añadir al carrito</button>
       </div>
     </article>
+
   </div>
+
   <section class="size-guide" aria-labelledby="tabla-tallas" style="margin-top: 4rem; overflow-x: auto;">
     <h3 id="tabla-tallas" style="text-align: center; margin-bottom: 1rem;">Guía de Tallas (Camisetas)</h3>
     <table class="usability-table" aria-describedby="tabla-tallas">
@@ -118,30 +133,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>S</td>
-          <td>88 - 96</td>
-          <td>73 - 81</td>
-          <td>88 - 96</td>
+          <td>S</td><td>88 - 96</td><td>73 - 81</td><td>88 - 96</td>
         </tr>
         <tr>
-          <td>M</td>
-          <td>96 - 104</td>
-          <td>81 - 89</td>
-          <td>96 - 104</td>
+          <td>M</td><td>96 - 104</td><td>81 - 89</td><td>96 - 104</td>
         </tr>
         <tr>
-          <td>L</td>
-          <td>104 - 112</td>
-          <td>89 - 97</td>
-          <td>104 - 112</td>
+          <td>L</td><td>104 - 112</td><td>89 - 97</td><td>104 - 112</td>
         </tr>
         <tr>
-          <td>XL</td>
-          <td>112 - 124</td>
-          <td>97 - 109</td>
-          <td>112 - 120</td>
+          <td>XL</td><td>112 - 124</td><td>97 - 109</td><td>112 - 120</td>
         </tr>
       </tbody>
     </table>
   </section>
+
 </section>
