@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { SeccionUsuario } from './seccion-usuario';
-import { RouterTestingModule } from '@angular/router/testing';
+import { SeccionUsuario } from '../../components/seccion-usuario/seccion-usuario';
+import { provideRouter } from '@angular/router';
 
 describe('SeccionUsuario', () => {
   let component: SeccionUsuario;
@@ -9,9 +9,10 @@ describe('SeccionUsuario', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SeccionUsuario, RouterTestingModule],
+      imports: [SeccionUsuario],
       providers: [
         provideZonelessChangeDetection(),
+        provideRouter([]),
       ]
     }).compileComponents();
 

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { provideZonelessChangeDetection } from '@angular/core';
 import { AcercaDe } from './acerca-de';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AcercaDe', () => {
   let component: AcercaDe;
@@ -8,9 +9,9 @@ describe('AcercaDe', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AcercaDe]
-    })
-    .compileComponents();
+      imports: [AcercaDe, RouterTestingModule],
+      providers: [provideZonelessChangeDetection()]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AcercaDe);
     component = fixture.componentInstance;

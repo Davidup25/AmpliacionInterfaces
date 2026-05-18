@@ -1,73 +1,32 @@
-<nav aria-label="Migas de pan" class="breadcrumbs" style="padding: 1rem 2rem; background-color: #f4f4f4; margin-bottom: 1rem;">
-  <ol style="list-style: none; display: flex; gap: 0.5rem; margin: 0; padding: 0; font-size: 0.9rem;">
-    <li><a routerLink="/home" style="color: #0077cc; text-decoration: none;">Inicio</a></li>
-    <li aria-hidden="true">/</li>
-    <li><a routerLink="/guantes" aria-current="page" style="color: #333; font-weight: bold; text-decoration: none;">Guantes</a></li>
-  </ol>
-</nav>
+<main id="main-content" tabindex="-1">
+  <section class="hero" aria-labelledby="guantes-title">
+    <h1 id="guantes-title">Guantes de Portero</h1>
+    <p>Protección, agarre y durabilidad para todos los niveles.</p>
+  </section>
 
-<section class="hero" aria-labelledby="guantes-hero-title">
-  <h1 id="guantes-hero-title">Guantes de Portero</h1>
-  <p>Protección, agarre y durabilidad para todos los niveles.</p>
-</section>
+  <div class="gloves-wrapper">
+    <h2 class="gloves-title">Guantes Disponibles</h2>
+    <p class="gloves-subtitle">Encuentra el modelo que mejor se adapte a tu estilo de juego.</p>
 
-<section class="gloves-wrapper" aria-labelledby="gloves-title">
-  <h2 class="gloves-title" id="gloves-title">Guantes Disponibles</h2>
-  <p class="gloves-subtitle">Encuentra el modelo que mejor se adapte a tu estilo de juego.</p>
-
-  <div class="search-filter-container" aria-label="Filtros de guantes" style="margin-bottom: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-    <div class="filter-group">
-      <label for="searchGuantes"><strong>Buscar:</strong></label>
-      <input type="search" id="searchGuantes" placeholder="Ej: Grip3, Air..." aria-label="Buscar guantes por modelo" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-left: 0.5rem;">
-    </div>
-    <div class="filter-group">
-      <label for="filterPublico"><strong>Categoría:</strong></label>
-      <select id="filterPublico" aria-label="Filtrar por categoría" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-left: 0.5rem;">
-        <option value="todos">Todos</option>
-        <option value="hombre">Hombre</option>
-        <option value="mujer">Mujer</option>
-        <option value="nino">Niño</option>
-      </select>
+    <div class="gloves-grid" role="list" aria-label="Catálogo de guantes">
+      <article class="gloves-card" *ngFor="let p of productos" role="listitem">
+        <div class="equip-img-placeholder">
+          <img [src]="p.imagen" [alt]="'Imagen de ' + p.nombre" loading="lazy">
+        </div>
+        <div class="gloves-info">
+          <h3>{{ p.nombre }}</h3>
+          <p>{{ p.descripcion }}</p>
+          <p class="precio" aria-label="Precio: {{ p.precio | currency:'EUR':'symbol':'1.2-2' }}">
+            {{ p.precio | currency:'EUR':'symbol':'1.2-2' }}
+          </p>
+          <button type="button" [attr.aria-label]="'Ver detalles de ' + p.nombre">Ver producto</button>
+          <button type="button" class="btn-add-cart"
+                  (click)="agregarAlCarrito(p.nombre, p.precio)"
+                  [attr.aria-label]="'Añadir ' + p.nombre + ' al carrito'">
+            🛒 Añadir al carrito
+          </button>
+        </div>
+      </article>
     </div>
   </div>
-
-  <div class="gloves-grid" role="list">
-
-    <article class="gloves-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/237942/750/guantes-nike-grip3-amarillo-0.webp"
-             alt="Guantes de portero Nike Grip3 color amarillo para hombre">
-      </div>
-      <div class="gloves-info">
-        <h3>Guantes para hombre</h3>
-        <p>Guantes con palma de látex alemán para alta adherencia para hombre.</p>
-        <button aria-label="Ver detalles de Guantes Nike Grip3 para hombre">Ver producto</button>
-      </div>
-    </article>
-
-    <article class="gloves-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/254702/750/guantes-sp-futbol-earhart-pro-air-chr-morado-fucsia-0.webp"
-             alt="Guantes de portero SP Fútbol color morado y fucsia para mujer">
-      </div>
-      <div class="gloves-info">
-        <h3>Guantes para mujer</h3>
-        <p>Guantes ergonómicos para mujer.</p>
-        <button aria-label="Ver detalles de Guantes SP Fútbol para mujer">Ver producto</button>
-      </div>
-    </article>
-
-    <article class="gloves-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/304342/750/guantes-reusch-junior-attrakt-25-infinity-finger-support-yellow-amarillo-0.webp"
-             alt="Guantes de portero Reusch Junior color amarillo con protecciones">
-      </div>
-      <div class="gloves-info">
-        <h3>Guantes para niño</h3>
-        <p>Ajuste ergonómico para sensación natural al blocar, para los futuros porteros.</p>
-        <button aria-label="Ver detalles de Guantes Reusch Junior para niño">Ver producto</button>
-      </div>
-    </article>
-
-  </div>
-</section>
+</main>

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideZonelessChangeDetection } from '@angular/core'; // 👈 nuevo
-
+import { provideZonelessChangeDetection } from '@angular/core';
 import { Equipaciones } from './equipaciones';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Equipaciones', () => {
   let component: Equipaciones;
@@ -9,10 +9,9 @@ describe('Equipaciones', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Equipaciones],
-      providers: [provideZonelessChangeDetection()] // 👈 clave para quitar NG0908
-    })
-    .compileComponents();
+      imports: [Equipaciones, RouterTestingModule],
+      providers: [provideZonelessChangeDetection()]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Equipaciones);
     component = fixture.componentInstance;

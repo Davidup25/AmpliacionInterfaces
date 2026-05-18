@@ -10,11 +10,11 @@ import { AcercaDe } from './pages/acerca-de/acerca-de/acerca-de';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: Home },
   { path: 'equipaciones', component: Equipaciones },
   { path: 'botas', component: Botas },
   { path: 'guantes', component: Guantes },
   { path: 'chandales', component: Chandales },
-  { path: 'home', component: Home },
   { path: 'seccion-usuario', component: SeccionUsuario },
   { path: 'registro-usuario', component: RegistroUsuario },
   { path: 'acerca-de', component: AcercaDe },
