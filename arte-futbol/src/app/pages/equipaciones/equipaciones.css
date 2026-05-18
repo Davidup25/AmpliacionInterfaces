@@ -1,3 +1,16 @@
+/* ===== CLASES DE ACCESIBILIDAD ===== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ===== HERO ===== */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -25,26 +38,79 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Títulos */
-.equip-title {
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 10px;
-  color: #0077cc;
+/* ===== CONTROLES (BUSCADOR Y FILTRO) ===== */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
 }
 
-.equip-subtitle {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px;
-  font-size: 1.1rem;
-  color: #555;
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+}
+
+.search-wrapper .search-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 1.2rem;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* Espacio extra a la izq para la lupa */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-wrapper input:focus, .sort-wrapper select:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+}
+
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-wrapper label {
+  font-weight: 600;
+  color: #333;
+}
+
+.sort-wrapper select {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.resultado-count {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 
 /* ===== GRID ===== */
 .equip-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -52,65 +118,121 @@
 .equip-card {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.10);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .equip-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* ===== IMAGEN (placeholder) ===== */
+/* ===== IMAGEN ===== */
 .equip-img-placeholder {
-  height: 180px;
+  height: 220px; /* Un poco más grande para que respire */
   background: #e8ecf1;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #666;
-  font-size: 0.95rem;
-  font-style: italic;
-  border-bottom: 1px solid #d5d5d5;
+  overflow: hidden;
 }
 
-/* ===== INFO ===== */
+.equip-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que la imagen se achate o deforme */
+  transition: transform 0.3s ease;
+}
+
+.equip-card:hover .equip-img-placeholder img {
+  transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
+}
+
+/* ===== INFO Y TIPOGRAFÍA ===== */
 .equip-info {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Empuja los botones hacia abajo si hay textos cortos */
 }
 
-.equip-info h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+.equip-info h2 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
   color: #003d73;
 }
 
-.equip-info p {
+.equip-desc {
   font-size: 0.95rem;
-  background-color: #d5d5d5;
-  color: #ffffff;
+  color: #555; /* Contraste perfecto para accesibilidad */
+  line-height: 1.5;
   margin-bottom: 15px;
+  flex-grow: 1;
 }
 
-/* Botón */
-.equip-info button {
-  background: #0077cc;
-  color: white;
-  padding: 8px 14px;
-  border: none;
+.equip-precio {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0077cc;
+  margin-bottom: 20px;
+}
+
+/* ===== BOTONES ===== */
+.equip-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Separación perfecta entre botones */
+}
+
+.btn-detalle {
+  background: transparent;
+  color: #0077cc;
+  border: 2px solid #0077cc;
+  padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.95rem;
-  transition:  0.2s ease;
+  font-weight: 600;
+  transition: 0.2s ease;
+  text-align: center;
 }
 
-.equip-info button:hover {
-  background: #005fa3;
+.btn-detalle:hover {
+  background: #f0f8ff;
 }
-/* 
-   TABLA 
- */
+
+.btn-add-cart {
+  background: #0077cc;
+  color: white;
+  border: 2px solid #0077cc;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-add-cart:hover {
+  background: #005fa3;
+  border-color: #005fa3;
+}
+
+/* Foco accesible para teclado */
+button:focus-visible {
+  outline: 3px solid #ff9900;
+  outline-offset: 2px;
+}
+
+/* ===== TABLA DE TALLAS (Intacta) ===== */
 .size-guide {
   max-width: 800px;
   margin: 0 auto;
@@ -118,7 +240,7 @@
 }
 
 .usability-table {
-  border-collapse: collapse; /* Evita doble borde */
+  border-collapse: collapse;
   width: 100%;
   text-align: left;
   background-color: #fff;
@@ -127,8 +249,8 @@
 
 .usability-table th, 
 .usability-table td {
-  padding: 12px; /* Espaciado interno */
-  border: 1px solid #ccc; /* Línea divisoria */
+  padding: 12px;
+  border: 1px solid #ccc;
 }
 
 .usability-table th {
@@ -136,29 +258,6 @@
   color: white;
 }
 
-/* Efecto Zebra Striping */
-.usability-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.usability-table tbody tr:nth-child(odd) {
-  background-color: #ffffff;
-}
-
-/* Resaltar fila al pasar el ratón */
-.usability-table tbody tr:hover {
-  background-color: #e6e6e6;
-  cursor: default;
-}
-.btn-add-cart {
-  margin-top: 0.5rem;
-  background: #0077cc;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  width: 100%;
-}
-.btn-add-cart:hover { background: #005fa3; }
+.usability-table tbody tr:nth-child(even) { background-color: #f9f9f9; }
+.usability-table tbody tr:nth-child(odd) { background-color: #ffffff; }
+.usability-table tbody tr:hover { background-color: #e6e6e6; cursor: default; }

@@ -1,19 +1,18 @@
 <main id="main-content" tabindex="-1">
-
   <section class="hero" aria-labelledby="eq-title">
     <h1 id="eq-title">Equipaciones</h1>
     <p>Explora nuestra selección de equipaciones oficiales, réplicas de clubes y conjuntos personalizables.</p>
   </section>
 
   <div class="equip-wrapper">
-
     <div class="controls" role="search" aria-label="Buscar y filtrar equipaciones">
       <div class="search-wrapper">
         <label for="searchEq" class="visually-hidden">Buscar equipaciones</label>
+        <span aria-hidden="true" class="search-icon">🔍</span>
         <input type="search" id="searchEq" placeholder="Buscar por nombre o descripción…"
                [(ngModel)]="terminoBusqueda" (input)="filtrar()" aria-label="Buscar equipaciones">
-        <span aria-hidden="true" class="search-icon">🔍</span>
       </div>
+      
       <div class="sort-wrapper">
         <label for="sortOrder">Ordenar por:</label>
         <select id="sortOrder" [(ngModel)]="orden" (change)="filtrar()">
@@ -35,23 +34,28 @@
 
     <div class="equip-grid" role="list" aria-label="Catálogo de equipaciones">
       <article class="equip-card" *ngFor="let p of productosFiltrados" role="listitem">
+        
         <div class="equip-img-placeholder">
-          <img [src]="p.imagen" [alt]="'Imagen de ' + p.nombre" loading="lazy" width="300" height="220">
+          <img [src]="p.imagen" [alt]="'Imagen de ' + p.nombre" loading="lazy">
         </div>
+        
         <div class="equip-info">
           <h2>{{ p.nombre }}</h2>
-          <p>{{ p.descripcion }}</p>
-          <p class="precio" aria-label="Precio: {{ p.precio | currency:'EUR':'symbol':'1.2-2' }}">
+          <p class="equip-desc">{{ p.descripcion }}</p>
+          <p class="equip-precio" aria-label="Precio: {{ p.precio | currency:'EUR':'symbol':'1.2-2' }}">
             {{ p.precio | currency:'EUR':'symbol':'1.2-2' }}
           </p>
-          <button type="button" class="btn-detalle" [attr.aria-label]="'Ver detalles de ' + p.nombre">
-            Ver detalles
-          </button>
-          <button type="button" class="btn-add-cart"
-                  (click)="agregarAlCarrito(p.nombre, p.precio)"
-                  [attr.aria-label]="'Añadir ' + p.nombre + ' al carrito'">
-            🛒 Añadir al carrito
-          </button>
+          
+          <div class="equip-actions">
+            <button type="button" class="btn-detalle" [attr.aria-label]="'Ver detalles de ' + p.nombre">
+              Ver detalles
+            </button>
+            <button type="button" class="btn-add-cart"
+                    (click)="agregarAlCarrito(p.nombre, p.precio)"
+                    [attr.aria-label]="'Añadir ' + p.nombre + ' al carrito'">
+              🛒 Añadir al carrito
+            </button>
+          </div>
         </div>
       </article>
     </div>

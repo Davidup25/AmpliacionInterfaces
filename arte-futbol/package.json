@@ -33,7 +33,7 @@
     "@angular/ssr": "^20.3.3",
     "crypto-js": "^4.2.0",
     "express": "^5.1.0",
-    "rxjs": "~7.8.0",
+    "rxjs": "^7.8.2",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
