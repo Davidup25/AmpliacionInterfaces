@@ -6,49 +6,29 @@
 
   <section class="categories" aria-labelledby="cat-title">
     <h2 id="cat-title">Nuestras categorías</h2>
-
     <div class="category-grid">
       <a class="flip-card" routerLink="/equipaciones" aria-label="Ver categoría de Equipaciones: Camisetas y conjuntos oficiales">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>Equipaciones</h3>
-          </div>
-          <div class="flip-card-back">
-            <p>Camisetas y conjuntos oficiales para jugadores y aficionados.</p>
-          </div>
+          <div class="flip-card-front"><h3>Equipaciones</h3></div>
+          <div class="flip-card-back"><p>Camisetas y conjuntos oficiales para jugadores y aficionados.</p></div>
         </div>
       </a>
-
       <a class="flip-card" routerLink="/chandales" aria-label="Ver categoría de Chándals: Conjuntos cómodos para entrenar">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>Chándals</h3>
-          </div>
-          <div class="flip-card-back">
-            <p>Conjuntos cómodos para entrenar o vestir a diario.</p>
-          </div>
+          <div class="flip-card-front"><h3>Chándals</h3></div>
+          <div class="flip-card-back"><p>Conjuntos cómodos para entrenar o vestir a diario.</p></div>
         </div>
       </a>
-
       <a class="flip-card" routerLink="/botas" aria-label="Ver categoría de Botas: Modelos para todo tipo de superficies">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>Botas</h3>
-          </div>
-          <div class="flip-card-back">
-            <p>Modelos para césped natural, artificial y multitaco.</p>
-          </div>
+          <div class="flip-card-front"><h3>Botas</h3></div>
+          <div class="flip-card-back"><p>Modelos para césped natural, artificial y multitaco.</p></div>
         </div>
       </a>
-
       <a class="flip-card" routerLink="/guantes" aria-label="Ver categoría de Guantes: Protección profesional para porteros">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h3>Guantes</h3>
-          </div>
-          <div class="flip-card-back">
-            <p>Guantes con agarre y protección profesional para porteros.</p>
-          </div>
+          <div class="flip-card-front"><h3>Guantes</h3></div>
+          <div class="flip-card-back"><p>Guantes con agarre y protección profesional para porteros.</p></div>
         </div>
       </a>
     </div>
@@ -75,13 +55,21 @@
   <section class="media-section" style="text-align: center; padding: 2rem; background-color: #f9f9f9;">
     <h2>Descubre nuestra pasión</h2>
     <figure>
-      <video controls width="100%" style="max-width: 700px; border-radius: 8px;" aria-label="Vídeo sobre equipamiento de fútbol profesional">
-        <source src="assets/video/promo.mp4" type="video/mp4">
-        <track kind="subtitles" src="assets/video/subtitulos-es.vtt" srclang="es" label="Español" default>
-        Tu navegador no soporta el vídeo.
-      </video>
+      <div class="video-wrapper" style="max-width: 700px; margin: 0 auto; border-radius: 8px; overflow: hidden;">
+        <iframe
+          width="100%"
+          height="394"
+          src="https://www.youtube.com/embed/mJJY53qhJe0"
+          title="adidas Backyard Legends | The Greatest Football Story Ever Told"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          aria-label="Vídeo promocional de adidas: Backyard Legends - The Greatest Football Story Ever Told"
+          style="display: block; border-radius: 8px;">
+        </iframe>
+      </div>
       <figcaption style="margin-top: 1rem;">
-        <p>Vídeo promocional de temporada. 
+        <p>Vídeo promocional de temporada.
           <a href="assets/video/transcripcion.txt" target="_blank" aria-label="Leer transcripción del vídeo promocional">Ver transcripción completa (Texto)</a>
         </p>
       </figcaption>

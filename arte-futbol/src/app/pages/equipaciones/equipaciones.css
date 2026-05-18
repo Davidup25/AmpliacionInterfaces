@@ -150,3 +150,15 @@
   background-color: #e6e6e6;
   cursor: default;
 }
+.btn-add-cart {
+  margin-top: 0.5rem;
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%;
+}
+.btn-add-cart:hover { background: #005fa3; }

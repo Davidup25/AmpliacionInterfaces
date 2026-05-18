@@ -1,47 +1,63 @@
 <div class="login-container">
   <div class="login-card">
     <div class="tabs">
-      <button class="tab-button active" data-tab="login" aria-pressed="true">Registrarse</button>
+      <button class="tab-button active" data-tab="register" aria-pressed="true">Registrarse</button>
     </div>
-    <form class="login-form active" id="registerForm" aria-labelledby="form-title">
+
+    <form class="login-form active" id="registerForm" aria-labelledby="form-title" (ngSubmit)="registrar()">
       <h3 id="form-title">Crear nueva cuenta</h3>
-      
+
       <fieldset>
-        <legend class="sr-only" style="display:none;">Datos Personales</legend>
+        <legend class="sr-only">Datos Personales</legend>
         <div class="form-row">
           <div class="form-group">
             <label for="regNombre">Nombre <span aria-hidden="true">*</span></label>
-            <input type="text" id="regNombre" placeholder="Tu nombre" class="form-input" required aria-required="true">
+            <input type="text" id="regNombre" placeholder="Tu nombre" class="form-input"
+              required aria-required="true" [(ngModel)]="nombre" name="nombre">
           </div>
           <div class="form-group">
             <label for="regApellido">Apellido <span aria-hidden="true">*</span></label>
-            <input type="text" id="regApellido" placeholder="Tu apellido" class="form-input" required aria-required="true">
+            <input type="text" id="regApellido" placeholder="Tu apellido" class="form-input"
+              required aria-required="true" [(ngModel)]="apellido" name="apellido">
           </div>
         </div>
       </fieldset>
 
       <div class="form-group">
         <label for="regEmail">Email <span aria-hidden="true">*</span></label>
-        <input type="email" id="regEmail" placeholder="tu@email.com" class="form-input" required aria-required="true">
+        <input type="email" id="regEmail" placeholder="tu@email.com" class="form-input"
+          required aria-required="true" [(ngModel)]="email" name="email">
       </div>
+
       <div class="form-group">
         <label for="regUsuario">Usuario <span aria-hidden="true">*</span></label>
-        <input type="text" id="regUsuario" placeholder="Elige un nombre de usuario" class="form-input" required aria-required="true">
+        <input type="text" id="regUsuario" placeholder="Elige un nombre de usuario" class="form-input"
+          required aria-required="true" [(ngModel)]="usuario" name="usuario">
       </div>
+
       <div class="form-group">
         <label for="regClave">Contraseña <span aria-hidden="true">*</span></label>
-        <input type="password" id="regClave" placeholder="Crea una contraseña segura" class="form-input" required aria-required="true">
+        <input type="password" id="regClave" placeholder="Mín. 8 caracteres, mayúscula, número y símbolo" class="form-input"
+          required aria-required="true" [(ngModel)]="clave" name="clave">
       </div>
+
       <div class="form-group">
         <label for="regConfirmarClave">Confirmar Contraseña <span aria-hidden="true">*</span></label>
-        <input type="password" id="regConfirmarClave" placeholder="Repite tu contraseña" class="form-input" required aria-required="true">
+        <input type="password" id="regConfirmarClave" placeholder="Repite tu contraseña" class="form-input"
+          required aria-required="true" [(ngModel)]="confirmarClave" name="confirmarClave">
       </div>
-      
+
       <div class="form-group-checkbox">
-        <input type="checkbox" id="regTerminos" required aria-required="true">
+        <input type="checkbox" id="regTerminos" required aria-required="true"
+          [(ngModel)]="terminosAceptados" name="terminos">
         <label for="regTerminos" class="checkbox-label">Acepto los términos y condiciones</label>
       </div>
-      
+
+      <div *ngIf="mensajeRegistro" [class]="mensajeExito ? 'mensaje-validacion mensaje-exito' : 'mensaje-validacion mensaje-error'"
+        role="alert" aria-live="polite">
+        {{ mensajeRegistro }}
+      </div>
+
       <button type="submit" class="btn btn-primary btn-full">Crear Cuenta</button>
     </form>
   </div>

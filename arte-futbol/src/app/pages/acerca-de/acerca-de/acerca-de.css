@@ -1,0 +1,12 @@
+.acerca-hero { background: linear-gradient(135deg,#0077cc,#003f7f); color:white; text-align:center; padding:4rem 2rem; }
+.acerca-hero h1 { font-size:2.5rem; margin-bottom:1rem; }
+.acerca-hero p { font-size:1.2rem; opacity:0.9; }
+.acerca-content { max-width:900px; margin:0 auto; padding:2rem; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+@media (max-width:600px) { .acerca-content { grid-template-columns:1fr; } }
+.acerca-card { background:#f9f9f9; border-radius:8px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+.acerca-card h2 { color:#0077cc; margin-bottom:0.75rem; font-size:1.2rem; }
+.acerca-lista { list-style:none; padding:0; margin:0; }
+.acerca-lista li { padding:0.3rem 0; color:#333; }
+.acerca-contacto { list-style:none; padding:0; }
+.acerca-contacto li { padding:0.3rem 0; }
+.acerca-contacto a { color:#0077cc; }

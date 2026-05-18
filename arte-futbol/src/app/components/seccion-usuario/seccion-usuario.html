@@ -4,31 +4,32 @@
       <button class="tab-button active" data-tab="login" aria-pressed="true">Iniciar Sesión</button>
     </div>
 
-    <form class="login-form active" id="loginForm" aria-labelledby="login-title">
-      <h3 id="login-title">Bienvenido de nuevo</h3>
-      
+    <form class="login-form active" id="loginForm" aria-labelledby="login-title" (ngSubmit)="validarLogin()">
+      <h3 id="login-title">Iniciar Sesión</h3>
+
       <div class="form-group">
-        <label for="loginUsuario">Usuario o Email <span aria-hidden="true">*</span></label>
-        <input type="text" id="loginUsuario" placeholder="Ingresa tu usuario o email" class="form-input" required aria-required="true">
+        <label for="loginUsuario">Email <span aria-hidden="true">*</span></label>
+        <input type="email" id="loginUsuario" placeholder="tu@email.com" class="form-input"
+          required aria-required="true" [(ngModel)]="email" name="email">
       </div>
-      
+
       <div class="form-group">
         <label for="loginClave">Contraseña <span aria-hidden="true">*</span></label>
-        <input type="password" id="loginClave" placeholder="Ingresa tu contraseña" class="form-input" required aria-required="true">
+        <input type="password" id="loginClave" placeholder="Tu contraseña" class="form-input"
+          required aria-required="true" [(ngModel)]="password" name="password">
       </div>
-      
-      <div class="form-options">
-        <div class="checkbox-container">
-          <input type="checkbox" id="chkRecordar"> 
-          <label for="chkRecordar" class="checkbox-label">Recordar sesión</label>
-        </div>
-        <a href="#" class="forgot-link" aria-label="Recuperar contraseña olvidada">¿Olvidaste tu contraseña?</a>
+
+      <div *ngIf="mensajeValidacion" [class]="mensajeExito ? 'mensaje-validacion mensaje-exito' : 'mensaje-validacion mensaje-error'"
+        role="alert" aria-live="polite">
+        {{ mensajeValidacion }}
       </div>
-      
-      <div class="mensaje-validacion" id="mensajeValidacion" style="display: none;" aria-live="polite" role="alert">
-      </div>
-      
-      <button type="submit" id="btnLogin" class="btn btn-primary btn-full">Ingresar</button>
+
+      <button type="submit" id="btnLogin" class="btn btn-primary btn-full">Iniciar Sesión</button>
+
+      <p style="text-align:center; margin-top:1rem; font-size:0.9rem;">
+        ¿No tienes cuenta?
+        <a routerLink="/registro-usuario" style="color:#0077cc;">Regístrate aquí</a>
+      </p>
     </form>
   </div>
 </div>

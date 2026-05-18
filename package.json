@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "crypto-js": "^4.2.0"
-  },
-  "devDependencies": {
-    "@types/crypto-js": "^4.2.2"
-  }
-}
-=======
   "name": "arte-futbol",
   "version": "0.0.0",
   "scripts": {
@@ -40,6 +31,7 @@
     "@angular/platform-server": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@angular/ssr": "^20.3.3",
+    "crypto-js": "^4.2.0",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
@@ -48,6 +40,7 @@
     "@angular/build": "^20.3.3",
     "@angular/cli": "^20.3.3",
     "@angular/compiler-cli": "^20.3.0",
+    "@types/crypto-js": "^4.2.2",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
@@ -60,4 +53,3 @@
     "typescript": "~5.9.2"
   }
 }
->>>>>>> c80b5f0948d6d351a5addb531985b8461f8b2e69

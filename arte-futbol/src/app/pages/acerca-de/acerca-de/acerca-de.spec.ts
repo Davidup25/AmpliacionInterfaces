@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { Equipaciones } from './equipaciones';
+import { AcercaDe } from './acerca-de';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('Equipaciones', () => {
-  let component: Equipaciones;
-  let fixture: ComponentFixture<Equipaciones>;
+describe('AcercaDe', () => {
+  let component: AcercaDe;
+  let fixture: ComponentFixture<AcercaDe>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Equipaciones, RouterTestingModule],
+      imports: [AcercaDe, RouterTestingModule],
       providers: [provideZonelessChangeDetection()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Equipaciones);
+    fixture = TestBed.createComponent(AcercaDe);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,147 +1,59 @@
-<nav aria-label="Migas de pan" class="breadcrumbs" style="padding: 1rem 2rem; background-color: #f4f4f4; margin-bottom: 1rem;">
-  <ol style="list-style: none; display: flex; gap: 0.5rem; margin: 0; padding: 0; font-size: 0.9rem;">
-    <li><a routerLink="/home" style="color: #0077cc; text-decoration: none;">Inicio</a></li>
-    <li aria-hidden="true">/</li>
-    <li><a routerLink="/equipaciones" aria-current="page" style="color: #333; font-weight: bold; text-decoration: none;">Equipaciones</a></li>
-  </ol>
-</nav>
+<main id="main-content" tabindex="-1">
 
-<section class="hero" aria-labelledby="equip-hero-title">
-  <h1 id="equip-hero-title">Equipaciones</h1>
-  <p>Explora nuestra selección de equipaciones oficiales, réplicas de clubes,
-    conjuntos completos y modelos personalizables.</p>
-</section>
-
-<section class="equip-wrapper" aria-labelledby="equip-title">
-  <h2 class="equip-title" id="equip-title">Equipaciones disponibles</h2>
-  <p class="equip-subtitle">Modelos y equipaciones disponibles con la mejor calidad</p>
-
-  <div class="search-filter-container" aria-label="Filtros de equipaciones" style="margin-bottom: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-    <div class="filter-group">
-      <label for="searchEquipaciones"><strong>Buscar:</strong></label>
-      <input type="search" id="searchEquipaciones" placeholder="Ej: Barcelona, Retro..." aria-label="Buscar equipaciones por equipo o estilo" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-left: 0.5rem;">
-    </div>
-    <div class="filter-group">
-      <label for="filterTipoEquipacion"><strong>Tipo:</strong></label>
-      <select id="filterTipoEquipacion" aria-label="Filtrar por tipo de equipación" style="padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-left: 0.5rem;">
-        <option value="todas">Todas</option>
-        <option value="clubes">Clubes</option>
-        <option value="selecciones">Selecciones</option>
-        <option value="retro">Retro</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="equip-grid" role="list">
-    <article class="equip-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/269504/grandes/camiseta-nike-fc-barcelona-primera-equipacion-2025-2026-deep-royal-blue-0.webp"
-          alt="Camiseta de la primera equipación del FC Barcelona">
-      </div>
-      <div class="equip-info">
-        <h3>Equipación Local</h3>
-        <p>Conjunto oficial de la temporada. Tejido transpirable y diseño profesional.</p>
-        <button aria-label="Ver detalles de la Equipación Local del Barcelona">Ver detalles</button>
-      </div>
-    </article>
-
-    <article class="equip-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/309337/750/camiseta-nike-fc-barcelona-segunda-equipacion-2025-2026-gold-0.webp"
-          alt="Camiseta dorada de la segunda equipación del FC Barcelona">
-      </div>
-      <div class="equip-info">
-        <h3>Equipación Visitante</h3>
-        <p>Segunda equipación con materiales ligeros y de secado rápido.</p>
-        <button aria-label="Ver detalles de la Equipación Visitante del Barcelona">Ver detalles</button>
-      </div>
-    </article>
-
-    <article class="equip-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/269503/750/camiseta-nike-fc-barcelona-tercera-equipacion-2025-2026-bright-mango-0.webp"
-          alt="Camiseta color mango de la tercera equipación del FC Barcelona">
-      </div>
-      <div class="equip-info">
-        <h3>Tercera Equipación</h3>
-        <p>Edición especial con colores alternativos y diseño exclusivo.</p>
-        <button aria-label="Ver detalles de la Tercera Equipación del Barcelona">Ver detalles</button>
-      </div>
-    </article>
-
-    <article class="equip-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://shop.atleticodemadrid.com/on/demandware.static/-/Sites-atm-master-catalog/default/dwf945994c/22CM1121_1.jpeg"
-          alt="Camiseta retro clásica del Atlético de Madrid">
-      </div>
-      <div class="equip-info">
-        <h3>Equipaciones Retro</h3>
-        <p>Modelos clásicos inspirados en temporadas históricas. Coleccionables.</p>
-        <button aria-label="Ver detalles de Equipaciones Retro">Ver detalles</button>
-      </div>
-    </article>
-
-    <article class="equip-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/260544/750/camiseta-nike-brasil-edicion-especial-reissue-opti-yellow-apple-green-apple-green-4.webp"
-          alt="Camiseta amarilla de la selección de Brasil edición especial">
-      </div>
-      <div class="equip-info">
-        <h3>Equipaciones de Selecciones</h3>
-        <p>Representa a tu país con equipaciones oficiales y réplicas premium.</p>
-        <button aria-label="Ver detalles de Equipaciones de Selecciones nacionales">Ver detalles</button>
-      </div>
-    </article>
-
-    <article class="equip-card" role="listitem">
-      <div class="equip-img-placeholder">
-        <img src="https://www.futbolemotion.com/imagesarticulos/264889/750/camiseta-adidas-real-madrid-training-2025-2026-almost-lime-0.webp"
-          alt="Camiseta de entrenamiento color lima del Real Madrid">
-      </div>
-      <div class="equip-info">
-        <h3>Equipaciones para Entrenamiento</h3>
-        <p>Ropa técnica diseñada para mejorar tu rendimiento en los entrenamientos.</p>
-        <button aria-label="Ver detalles de Equipaciones para Entrenamiento">Ver detalles</button>
-      </div>
-    </article>
-  </div>
-  <section class="size-guide" aria-labelledby="tabla-tallas" style="margin-top: 4rem; overflow-x: auto;">
-    <h3 id="tabla-tallas" style="text-align: center; margin-bottom: 1rem;">Guía de Tallas (Camisetas)</h3>
-    <table class="usability-table" aria-describedby="tabla-tallas">
-      <thead>
-        <tr>
-          <th scope="col">Talla</th>
-          <th scope="col">Pecho (cm)</th>
-          <th scope="col">Cintura (cm)</th>
-          <th scope="col">Cadera (cm)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>S</td>
-          <td>88 - 96</td>
-          <td>73 - 81</td>
-          <td>88 - 96</td>
-        </tr>
-        <tr>
-          <td>M</td>
-          <td>96 - 104</td>
-          <td>81 - 89</td>
-          <td>96 - 104</td>
-        </tr>
-        <tr>
-          <td>L</td>
-          <td>104 - 112</td>
-          <td>89 - 97</td>
-          <td>104 - 112</td>
-        </tr>
-        <tr>
-          <td>XL</td>
-          <td>112 - 124</td>
-          <td>97 - 109</td>
-          <td>112 - 120</td>
-        </tr>
-      </tbody>
-    </table>
+  <section class="hero" aria-labelledby="eq-title">
+    <h1 id="eq-title">Equipaciones</h1>
+    <p>Explora nuestra selección de equipaciones oficiales, réplicas de clubes y conjuntos personalizables.</p>
   </section>
-</section>
+
+  <div class="equip-wrapper">
+
+    <div class="controls" role="search" aria-label="Buscar y filtrar equipaciones">
+      <div class="search-wrapper">
+        <label for="searchEq" class="visually-hidden">Buscar equipaciones</label>
+        <input type="search" id="searchEq" placeholder="Buscar por nombre o descripción…"
+               [(ngModel)]="terminoBusqueda" (input)="filtrar()" aria-label="Buscar equipaciones">
+        <span aria-hidden="true" class="search-icon">🔍</span>
+      </div>
+      <div class="sort-wrapper">
+        <label for="sortOrder">Ordenar por:</label>
+        <select id="sortOrder" [(ngModel)]="orden" (change)="filtrar()">
+          <option value="default">Por defecto</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="nombre">Nombre A-Z</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="resultado-count" aria-live="polite" aria-atomic="true">
+      {{ productosFiltrados.length }} producto{{ productosFiltrados.length !== 1 ? 's' : '' }} encontrado{{ productosFiltrados.length !== 1 ? 's' : '' }}
+    </p>
+
+    <div *ngIf="productosFiltrados.length === 0" class="no-results" role="status" aria-live="polite">
+      <p>No se encontraron equipaciones con tu búsqueda.</p>
+    </div>
+
+    <div class="equip-grid" role="list" aria-label="Catálogo de equipaciones">
+      <article class="equip-card" *ngFor="let p of productosFiltrados" role="listitem">
+        <div class="equip-img-placeholder">
+          <img [src]="p.imagen" [alt]="'Imagen de ' + p.nombre" loading="lazy" width="300" height="220">
+        </div>
+        <div class="equip-info">
+          <h2>{{ p.nombre }}</h2>
+          <p>{{ p.descripcion }}</p>
+          <p class="precio" aria-label="Precio: {{ p.precio | currency:'EUR':'symbol':'1.2-2' }}">
+            {{ p.precio | currency:'EUR':'symbol':'1.2-2' }}
+          </p>
+          <button type="button" class="btn-detalle" [attr.aria-label]="'Ver detalles de ' + p.nombre">
+            Ver detalles
+          </button>
+          <button type="button" class="btn-add-cart"
+                  (click)="agregarAlCarrito(p.nombre, p.precio)"
+                  [attr.aria-label]="'Añadir ' + p.nombre + ' al carrito'">
+            🛒 Añadir al carrito
+          </button>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>

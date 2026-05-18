@@ -1,91 +1,56 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { AutenticacionService } from '../../services/autentication';
+import { SesionService } from '../../services/sesion.service';
 
 @Component({
   selector: 'app-seccion-usuario',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './seccion-usuario.html',
   styleUrls: ['./seccion-usuario.css'],
 })
-export class SeccionUsuario implements AfterViewInit {
-  constructor(private autenticacionService: AutenticacionService) {}
+export class SeccionUsuario {
+  email = '';
+  password = '';
+  mensajeValidacion = '';
+  mensajeExito = false;
+  cargando = false;
 
-  ngAfterViewInit(): void {
-    this.setupTabs();
-    this.setupLogin();
-  }
+  constructor(
+    private autService: AutenticacionService,
+    private sesionService: SesionService,
+    private router: Router
+  ) {}
 
-  // Configuración de pestañas
-  private setupTabs(): void {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const forms = document.querySelectorAll('.login-form');
-
-    tabButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        forms.forEach(form => form.classList.remove('active'));
-
-        button.classList.add('active');
-        const tabName = button.getAttribute('data-tab');
-        const formToShow = document.getElementById(tabName + 'Form');
-        if (formToShow) formToShow.classList.add('active');
-
-        this.limpiarMensaje();
-      });
-    });
-  }
-
-  // Configuración del botón de login
-  private setupLogin(): void {
-    const btnLogin = document.getElementById('btnLogin');
-    if (btnLogin) {
-      btnLogin.addEventListener('click', () => this.validarLogin());
-    }
-  }
-
-  private validarLogin(): void {
-    const usuarioInput = document.getElementById('loginUsuario') as HTMLInputElement;
-    const contraseñaInput = document.getElementById('loginClave') as HTMLInputElement;
-
-    if (!usuarioInput || !contraseñaInput) return;
-
-    const email = usuarioInput.value.trim();
-    const password = contraseñaInput.value.trim();
-
-    if (!email || !password) {
-      this.mostrarMensaje('Vamos, completa todos los campos', false);
+  async validarLogin(): Promise<void> {
+    if (!this.email || !this.password) {
+      this.mensajeValidacion = 'Por favor, completa todos los campos.';
+      this.mensajeExito = false;
       return;
     }
-
-    const esValido = this.autenticacionService.validarCredenciales(email, password);
-
-    if (esValido) {
-      this.mostrarMensaje('Validación correcta', true);
-      usuarioInput.value = '';
-      contraseñaInput.value = '';
-    } else {
-      this.mostrarMensaje('Validación incorrecta - Usuario o contraseña inválidos', false);
+    this.cargando = true;
+    this.mensajeValidacion = '';
+    try {
+      const usuario = await this.autService.login({ email: this.email, password: this.password });
+      if (usuario) {
+        this.sesionService.iniciarSesion({ nombre: usuario.nombre, email: usuario.email });
+        this.mensajeValidacion = `¡Bienvenido, ${usuario.nombre}!`;
+        this.mensajeExito = true;
+        this.email = '';
+        this.password = '';
+        setTimeout(() => this.router.navigate(['/home']), 1500);
+      } else {
+        this.mensajeValidacion = 'Usuario o contraseña incorrectos.';
+        this.mensajeExito = false;
+      }
+    } catch {
+      this.mensajeValidacion = 'Error al conectar. Inténtalo de nuevo.';
+      this.mensajeExito = false;
+    } finally {
+      this.cargando = false;
     }
-  }
-
-  private mostrarMensaje(texto: string, esExitoso: boolean): void {
-    const mensajeDiv = document.getElementById('mensajeValidacion');
-    if (!mensajeDiv) return;
-
-    mensajeDiv.textContent = texto;
-    mensajeDiv.style.display = 'block';
-    mensajeDiv.className = esExitoso ? 'mensaje-validacion mensaje-exito' : 'mensaje-validacion mensaje-error';
-
-    setTimeout(() => this.limpiarMensaje(), 5000);
-  }
-
-  private limpiarMensaje(): void {
-    const mensajeDiv = document.getElementById('mensajeValidacion');
-    if (!mensajeDiv) return;
-
-    mensajeDiv.style.display = 'none';
-    mensajeDiv.textContent = '';
   }
 }
