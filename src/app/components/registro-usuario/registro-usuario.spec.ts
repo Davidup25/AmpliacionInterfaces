@@ -1,0 +1,24 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideZonelessChangeDetection } from '@angular/core'; // 👈 nuevo
+
+import { RegistroUsuario } from './registro-usuario';
+
+describe('RegistroUsuario', () => {
+  let component: RegistroUsuario;
+  let fixture: ComponentFixture<RegistroUsuario>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RegistroUsuario],
+      providers: [provideZonelessChangeDetection()] // 👈 clave para quitar NG0908
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(RegistroUsuario);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

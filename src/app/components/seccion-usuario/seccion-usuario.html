@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="login">Iniciar Sesión</button>
+    </div>
+
+    <form class="login-form active" id="loginForm">
+      <h3>Bienvenido de nuevo</h3>
+      <div class="form-group">
+        <label for="loginUsuario">Usuario o Email</label>
+        <input
+          type="text"
+          id="loginUsuario"
+          placeholder="Ingresa tu usuario o email"
+          class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="loginClave">Contraseña</label>
+        <input type="password" id="loginClave"
+          placeholder="Ingresa tu contraseña" class="form-input">
+      </div>
+      <div class="form-options">
+        <label class="checkbox-label">
+          <input type="checkbox"> Recordar sesión
+        </label>
+        <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+      </div>
+      <!-- Mensaje de validación -->
+      <div class="mensaje-validacion" id="mensajeValidacion"
+        style="display: none;">
+      </div>
+      <button type="button" id="btnLogin" class="btn btn-primary btn-full">Ingresar</button>
+    </form>
+  </div>
