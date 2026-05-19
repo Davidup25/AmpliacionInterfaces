@@ -58,30 +58,30 @@ export class Header implements OnInit {
     this.router.navigate(['/home']);
   }
 
- buscar(): void {
-  if (this.terminoBusqueda.trim()) {
-    this.busquedaService.actualizarBusqueda(this.terminoBusqueda.trim());
+  buscar(): void {
     const term = this.terminoBusqueda.toLowerCase().trim();
-    const ruta = this.router.url.split('?')[0];
-    const rutasCategoria = ['/equipaciones', '/botas', '/chandales', '/guantes'];
+    if (term) {
+      // 1. Enviamos SIEMPRE la búsqueda al servicio para que filtren los componentes
+      this.busquedaService.actualizarBusqueda(this.terminoBusqueda.trim());
+      
+      const ruta = this.router.url.split('?')[0];
+      const rutasCategoria = ['/equipaciones', '/botas', '/chandales', '/guantes'];
 
-    if (rutasCategoria.includes(ruta)) {
-      // Ya estamos en una categoría, nos quedamos
-      return;
-    }
-
-    // Detectar categoría por palabras clave
-    if (term.includes('bota') || term.includes('nike') || term.includes('puma') || term.includes('adidas') && term.includes('predator')) {
-      this.router.navigate(['/botas']);
-    } else if (term.includes('chandal') || term.includes('chándal') || term.includes('sudadera')) {
-      this.router.navigate(['/chandales']);
-    } else if (term.includes('guante')) {
-      this.router.navigate(['/guantes']);
-    } else {
-      this.router.navigate(['/equipaciones']);
+      // 2. Si NO estamos en ninguna tienda, le mandamos a la categoría correcta
+      if (!rutasCategoria.includes(ruta)) {
+        if (term.includes('bota') || term.includes('nike') || term.includes('puma') || (term.includes('adidas') && term.includes('predator'))) {
+          this.router.navigate(['/botas']);
+        } else if (term.includes('chandal') || term.includes('chándal') || term.includes('sudadera')) {
+          this.router.navigate(['/chandales']);
+        } else if (term.includes('guante')) {
+          this.router.navigate(['/guantes']);
+        } else {
+          this.router.navigate(['/equipaciones']);
+        }
+      }
     }
   }
-}
+
   @HostListener('document:keydown.escape')
   cerrarMenus(): void {
     this.categoriasAbiertas = false;

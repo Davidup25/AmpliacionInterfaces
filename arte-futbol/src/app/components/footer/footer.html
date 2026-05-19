@@ -24,7 +24,11 @@
       <ul aria-label="Navegación del pie de página">
         <li><a routerLink="/home">Inicio</a></li>
         <li><a routerLink="/acerca-de">Acerca de</a></li>
-        <li><a href="#contact">Volver Arriba</a></li>
+        <li>
+          <button type="button" class="btn-arriba" (click)="irArriba()" aria-label="Volver al principio de la página" style="background:none; border:none; color:white; cursor:pointer; text-decoration:underline; font-size:1rem; padding:0;">
+            Volver Arriba
+          </button>
+        </li>
       </ul>
     </div>
 
